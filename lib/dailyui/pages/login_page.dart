@@ -10,29 +10,51 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text('Login Page'),
-          const SizedBox(height: 100),
-          const TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                icon: Icon(Icons.person),
-                filled: true,
-                labelText: 'Username',
-                floatingLabelBehavior: FloatingLabelBehavior.always),
-          ),
-          const TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                icon: Icon(Icons.password),
-                filled: true,
-                labelText: 'Password',
-                floatingLabelBehavior: FloatingLabelBehavior.always),
+          Text('Login Page', style: Theme.of(context).textTheme.displaySmall,),
+          const SizedBox(height: 40),
+          Container(
+            width: 500,
+            padding: EdgeInsets.all(20),
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.purpleAccent,
+                    Colors.blueAccent,
+                  ],
+                ),
+              borderRadius: BorderRadius.all(Radius.circular(16))
+            ),
+            child: Column(
+              children: const [
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      icon: Icon(Icons.person),
+                      filled: true,
+                      labelText: 'Username',
+                      floatingLabelBehavior: FloatingLabelBehavior.auto),
+                ),
+                SizedBox(height: 25),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      icon: Icon(Icons.password),
+                      filled: true,
+                      labelText: 'Password',
+                      floatingLabelBehavior: FloatingLabelBehavior.auto),
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 50,
           ),
-          MaterialButton(
-            onPressed: () {},
+          ButtonTheme(
+            child: ElevatedButton(
+              onPressed: () {}, child: Text('Sign in'),
+            ),
           )
         ],
       ),
